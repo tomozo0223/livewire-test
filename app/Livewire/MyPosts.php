@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -11,7 +12,7 @@ class MyPosts extends Component
 {
     use WithPagination;
 
-    #[url]
+    #[Url]
     public $search = "";
 
     public function updateSearch()

@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\CreatePost;
+use App\Livewire\Dashboard;
 use App\Livewire\EditPost;
 use App\Livewire\MyPosts;
 use App\Livewire\Settings\Appearance;
@@ -17,9 +18,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('dashboard', Dashboard::class)->name('dashboard');
 
     Route::redirect('settings', 'settings/profile');
 

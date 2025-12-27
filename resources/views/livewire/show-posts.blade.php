@@ -2,7 +2,7 @@
     <flux:heading size="xl" level="1" class="mb-5">記事一覧ページ</flux:heading>
 
     <div class="flex justify-between items-center mb-6 gap-4 mt-6">
-        <flux:input wire:model.live="search" icom="magnifying-glass" class="w-64" placeholder="タイトルで検索" />
+        <flux:input wire:model.live="search" icon="magnifying-glass" class="w-64" placeholder="タイトルで検索" />
 
         @auth
             <flux:button href="{{ route('posts.create') }}" wire:navigate variant="primary">新規作成</flux:button>
@@ -19,4 +19,6 @@
             </a>
         </article>
     @endforeach
+
+    {{ $posts->links() }}
 </div>
